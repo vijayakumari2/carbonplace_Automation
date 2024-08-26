@@ -2,11 +2,14 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "main" ]
+    # branches: [ "main" ]
+    branches: -"**"
   pull_request:
-    branches: [ "main" ]
+    # branches: [ "main" ]
+    branches: -"**"
   schedule:
-    - cron: '44 16 * * 5'
+    # - cron: '44 16 * * 5' # Optional  Run every friday 4.14
+    - cron: '0 2 * * 1'  # Optional: Run on all branches at 2 AM every Monday
 
 jobs:
   analyze:
